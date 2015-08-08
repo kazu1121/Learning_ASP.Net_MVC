@@ -1,0 +1,1 @@
+Zmodyfikuj pisan¹ w poprzednich zadaniach aplikacjê do wysy³ania wiadomoœci w ten sposób, aby po klikniêciu "Wyœlij" formularz wysy³any by³ asynchronicznie - przy pomocy AJAX. Potwierdzenie wys³ania wiadomoœci powinno byæ wyœwietlone poni¿ej formularza i zawieraæ jej treœæ (np. Wys³ano wiadomoœæ X"). Mo¿esz skorzystaæ z helperów Ajax.BeginForm.

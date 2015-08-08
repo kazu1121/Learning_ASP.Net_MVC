@@ -1,0 +1,19 @@
+﻿@model _06BazyDanych.Models.MessageDetails
+
+@{
+    ViewBag.Title = "EmailConfirmation";
+}
+
+<div>
+
+    <h2>Wiadomość została wysłana</h2>
+
+    <ul>
+
+        <li>Autor: @Model.emailAuthor</li>
+        <li>Temat: @Model.subject</li>
+        <li>Treść wiadomości: <br/> @Model.messageDetails</li>
+
+    </ul>
+
+</div>

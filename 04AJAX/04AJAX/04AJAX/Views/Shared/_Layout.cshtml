@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        @RenderSection("TopScripts", required: false)
+    </head>
+    <body>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+
+        @RenderBody()
+
+
+
+        @RenderSection("BottomScripts", required: false)
+    </body>
+</html>

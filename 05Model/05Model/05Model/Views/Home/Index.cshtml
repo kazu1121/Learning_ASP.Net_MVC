@@ -1,0 +1,23 @@
+﻿@model _05Model.Models.MessageDetails
+
+@using(Ajax.BeginForm("SendEmail", new AjaxOptions()
+{
+	HttpMethod = "Post",
+    UpdateTargetId = "ConfirmationContent",
+    LoadingElementId = "LoadingConfirmationContent"
+}))
+{
+    <label>Twój email: @Html.EditorFor(x => x.authorEmail) </label><br/>
+    <label>Temat: @Html.EditorFor(x => x.subject) </label><br/>
+    <label>Treść wiadomości: @Html.EditorFor(x => x.messageDetails, InputType.Text) </label><br/><br/>
+    
+    <input type="submit" value="Wyślij"/>
+}
+
+<div id="ConfirmationContent">
+	@Html.Partial("_PartialSendConfirmation")
+</div>
+
+<div id="LoadingConfirmationContent" style="display: none">
+	<p>Trwa wysyłanie wiadomości...</p>
+</div>

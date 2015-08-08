@@ -1,0 +1,71 @@
+﻿@model _04AJAX.Models.MessageDetails
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Zostaw wiadomość autorowi!</h2>
+
+@using (Ajax.BeginForm("SendEmail",new AjaxOptions()
+{
+    HttpMethod = "Post",
+    UpdateTargetId = "SendRequest",
+    LoadingElementId = "loading"
+}))
+{
+    @*Tutaj piszemy formularz*@
+
+ 
+    @Html.LabelFor(x => x.email, "Twój email: ")
+    @Html.TextBoxFor(x => x.email)<br/>
+    
+    @Html.LabelFor(x => x.subject, "Temat: ")
+    @Html.TextBoxFor(x => x.subject)<br/>
+    
+    @Html.LabelFor(x => x.messageDetails, "Treść wiadomości: ")<br/>
+    @Html.TextAreaFor(x => x.messageDetails)
+
+
+    @*  
+    <label>Twój email: <input type="email" name="email"/></label><br/>
+    <label>Temat: <input type="text" name="subject"/></label><br/>
+    <label>Treść wiadomości: <br/><input role="textbox" name="messageDetails"/></label>
+    *@
+    
+    <br/><input type="submit" value="Wyślij"/>
+}
+
+
+<div id="SendRequest">
+    @Html.Partial("_PartialEmailConfirmation", Model)
+</div>
+
+
+<div id="loading" style="display: none">
+    <p>Trwa wysyłanie wiadomości...</p>
+</div>
+
+
+@*
+<script src="~/Scripts/mustache.js"></script>
+
+<div id="formresult">
+    
+</div>
+
+
+<script id="RequestTemplate" type="text/template">
+    <p>Nadawca: {{email}}</p>
+    <p>Temat: {{subject}}</p>
+    <p>Treść wiadomości:</p>
+    <p>{{messagedetails}}</p>
+</script>
+
+<script>
+    function ProcessAndUpdate(result) {
+        var template = $('#RequestTemplate').html();
+        var html = Mustache.to_html(template, result);
+        $('#formresult').html(html);
+    }
+
+</script>
+*@

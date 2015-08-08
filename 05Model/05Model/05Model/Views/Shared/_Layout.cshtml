@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    @RenderSection("TopScripts", required: false)
+</head>
+<body>
+    <div>
+
+        @RenderBody()
+
+    </div>
+
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+    @RenderSection("BottomScripts", required: false)
+</body>
+</html>

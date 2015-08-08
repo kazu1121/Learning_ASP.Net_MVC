@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+        <style>
+            .field-validation-error {
+                color: red;
+                font-weight: bold;
+            }
+
+            .input-validation-error {
+                background: pink;
+                border: 1px solid red;
+            }
+        </style>
+        
+        @RenderSection("TopScripts", required: false)
+    </head>
+    <body>
+    <div>
+
+        @RenderBody()
+
+    </div>
+        <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+        @RenderSection("BottomScripts", required: false)
+    </body>
+</html>

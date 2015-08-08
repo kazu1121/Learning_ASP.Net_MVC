@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <form action="SendEmail" method="POST">
+
+        <label>Email: <input type="email" name="Message.email"/></label>
+        <label>Temat: <input type="text" name="Message.subject"/></label>
+        <label>Treść wiadomości: <input type="text" name="Message.messageDetails"/></label><br/>
+
+        <input type="submit" value="Wyślij"/>
+
+    </form>
+</div>

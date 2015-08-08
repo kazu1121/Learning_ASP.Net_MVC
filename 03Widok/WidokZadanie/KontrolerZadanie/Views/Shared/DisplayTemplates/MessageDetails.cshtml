@@ -1,0 +1,10 @@
+﻿@model KontrolerZadanie.Models.MessageDetails
+
+@*Własny DisplayFor helper*@
+<div>
+    <p style="color: darkmagenta">Nadawca: @Model.email</p>
+    <p>Temat: @Model.subject</p>
+    <p>Treść wiadomości:<br/>
+        @Model.messageDetails
+    </p>
+</div>

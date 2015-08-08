@@ -1,0 +1,1 @@
+Rozbuduj poprzednie przyk³ady Twojego formularza do wysy³ania wiadomoœci o zapisywanie go do bazy danych. Wystarczy, ¿e baza bêdzie mia³a jedn¹ tabelkê, przechowuj¹c¹ kolejne wiadomoœci. Skorzystaj z Entity Framework (podejœcie code first). Mo¿esz wykorzystaæ klasê MessageDetails jako klasê Twojego modelu danych.

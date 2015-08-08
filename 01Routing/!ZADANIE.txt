@@ -1,0 +1,7 @@
+Zaprojektuj tablicê routingu w nowo utworzonej, pustej aplikacji ASP.NET MVC tak, aby spe³nia³a nastêpuj¹ce wymagania:
+ 
+•	Domyœlnie, pierwszy cz³on adresu URL powinien oznaczaæ nazwê kontrolera a drugi cz³on nazwê akcji (np. http://twojadomena.com/products/list ma prowadziæ do kontrolera ProductsController i jego akcji List). Jeœli parametry nie zostan¹ wprowadzone, domyœlnie trasa powinna prowadziæ do kontrolera StaticController i jego akcji Index.
+•	Adresy, który drugich cz³on to "gatunki" - takie jak http://twojadomena.com/gatunki/rock, http://twojadomena.com/gatunki/pop powinny prowadziæ do kontrolera ProductsController i jego akcji Index. Ostatni cz³on adresu (np. rock, pop) powinien byæ przekazywany jako parametr string metody Index.
+•	Adres, którego pierwszy cz³on to "onas" (np. http://twojadomena.com/onas) powinien kierowaæ do kontrolera StaticController i jego akcji About.
+ 
+Sam zdecyduj, czy wolisz skorzystaæ z atrybutów czy klasycznej tablicy tras. W razie problemów lub w ramach æwiczeñ mo¿esz tak¿e skorzystaæ z narzêdzia Route Debugger, aby zweryfikowaæ dzia³anie swoich tras.
