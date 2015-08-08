@@ -1,33 +1,38 @@
-﻿using _05Model.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Model.Models;
 
-namespace _05Model.Controllers
+namespace Model.Controllers
 {
+    [RoutePrefix("Home")]
     public class HomeController : Controller
     {
 
         [Route("")]
+        [Route("Index")]
+        // GET: Home
         public ActionResult Index()
         {
             return View();
         }
 
-
+        
         [HttpPost]
         [Route("SendEmail")]
         public ActionResult SendEmail(MessageDetails message)
         {
-            Thread.Sleep(2000);
 
-	        if (Request.IsAjaxRequest())
-	        {
-		        return PartialView("_PartialSendConfirmation", message);
-	        }
+            if (!ModelState.IsValid)
+            {
+                return View("Index", message);
+            }
+
+            if (Request.IsAjaxRequest())
+                return PartialView("_PartialEmailConfirmation", message);
 
             return View("EmailConfirmation", message);
         }

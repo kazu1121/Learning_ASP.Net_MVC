@@ -1,0 +1,40 @@
+﻿@model Model.Models.MessageDetails
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Ajax.BeginForm("SendEmail", new AjaxOptions
+{
+    HttpMethod = "Post",
+    UpdateTargetId = "contenerEmailConfirmation",
+    LoadingElementId = "loadingEmailConfirmation"
+}))
+{
+    @Html.LabelFor(x => x.emailAuthor, "Twój email: ")
+    @Html.EditorFor(x => x.emailAuthor)
+    @Html.ValidationMessageFor(x => x.emailAuthor)<br/>
+    
+    @Html.LabelFor(x => x.subject, "Temat: ")
+    @Html.EditorFor(x => x.subject)
+    @Html.ValidationMessageFor(x => x.subject)<br/>
+    
+    @Html.LabelFor(x => x.messageDetails, "Treść wiadomości: ")<br/>
+    @Html.EditorFor(x => x.messageDetails)
+    @Html.ValidationMessageFor(x => x.messageDetails)<br/>
+    
+    <input type="submit" value="Wyślij"/>
+}
+
+<div>@Html.ValidationSummary()</div>
+
+
+<div id="contenerEmailConfirmation">
+    @Html.Partial("_PartialEmailConfirmation")
+</div>
+
+<div id="loadingEmailConfirmation" style="display: none">
+    <p>Trwa wysyłanie wiadomości...</p>
+</div>

@@ -1,0 +1,9 @@
+﻿@model Model.Models.MessageDetails
+
+
+@if (Model != null)
+{
+        <p>Autor: @Model.emailAuthor</p>
+        <p>Temat: @Model.subject</p>
+        <p>Treść wiadomości:<br/> @Model.messageDetails</p>
+}

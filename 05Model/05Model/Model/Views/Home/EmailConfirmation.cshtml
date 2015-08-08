@@ -1,0 +1,11 @@
+﻿@model Model.Models.MessageDetails
+@{
+    ViewBag.Title = "EmailConfirmation";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>EmailConfirmation</h2>
+
+@Model.emailAuthor<br />
+@Model.subject<br />
+@Model.messageDetails<br /><hr />
