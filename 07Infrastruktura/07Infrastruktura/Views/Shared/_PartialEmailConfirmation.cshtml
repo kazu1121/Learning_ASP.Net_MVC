@@ -1,0 +1,12 @@
+﻿@model _07Infrastruktura.Models.MessageDetails
+           
+@if (Model != null)
+{
+    <p>Szczegóły wysłanej wiadomości:</p>
+
+    <ul>
+        <li>Autor: @Model.authorEmail</li>
+        <li>Temat: @Model.subject</li>
+        <li>Treść wiadomości: <br/>@Model.messageDetails</li>
+    </ul>
+}
